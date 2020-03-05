@@ -5,15 +5,47 @@
     <meta charset="UTF-8">
     <title>Web application for assessing the risk of developing tuberculosis in children and adolescents</title>
     <link href="style/bootstrap.min.css" rel="stylesheet"/>
-    <link href="style/main.css" rel="stylesheet"/></head>
-<body>
+    <link href="style/main.css" rel="stylesheet"/>
+</head>
+<body id="main-container">
 <div class="container">
-    <div class="row">
-        <div class="col" id="main-title">Online Tuberculin Test Interpreter</div>
-        <div class="col bg-danger p-5">hello</div>
+    <div class="row" id="main-title">
+        <h3 class="col-lg-10 col-xl-10"> Веб-приложение по оценке риска возникновения туберкулёза у детей и подростков
+        </h3>
+        <a class="btn btn-secondary dropdown-toggle offset-lg-1 offset-xl-1 language-chooser" href="#" role="button"
+           id="dropdownMenuLink" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            <img src="img/flags/Russia24.png" alt=""/>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#"><img src="img/flags/England24.png" alt=""/>English</a>
+        </div>
     </div>
-    <div class="row">
+    <div id="main-part">
+        <h4 id="start-text-badge">
+            Выберите, пожалуйста, корректные варианты ответов для получения приблизительного результата
+        </h4>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputAge">Возраст</label>
+                <input type="text" class="form-control" id="inputAge" placeholder="Возраст">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputRegion">Район</label>
+                <select id="inputRegion" class="form-control">
+                    <option selected>Выберите район</option>
+                    <option>Минский</option>
+                    <option>Ивацевичский</option>
+                    <option>Гомельский</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
 
+        </div>
+    </div>
+    <div class="row" id="footer">
+        <div class="col">Made by BSU /</div>
     </div>
 </div>
 <script src="js/jquery-3.4.1.js"></script>
