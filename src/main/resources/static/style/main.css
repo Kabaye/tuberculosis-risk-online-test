@@ -14,5 +14,22 @@
 .language-chooser{
     height: 40px;
     width: 68px;
-    background-color: #ff3228;
+    background-color: #94a7ff;
+}
+
+#main-title-text{
+    font-size: 36px;
+}
+
+.main-title-text-small{
+    font-size: 18px;
+}
+body{
+    min-width: 375px;
+    min-height: 600px;
+}
+#not-active-languages{
+    max-width: 150px;
+    min-width: 150px;
+    width: 150px;
 }

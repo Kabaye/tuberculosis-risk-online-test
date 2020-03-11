@@ -10,27 +10,45 @@
 <body id="main-container">
 <div class="container">
 
-    <!--    TODO do NavBar-->
-    <div class="row" id="main-title">
-        <h3 class="col-10"> Калькулятор оценки риска возникновения туберкулёза у детей и подростков </h3>
-        <div class="col-1 offset-1">
-            <a class="btn btn-secondary dropdown-toggle language-chooser" href="#" role="button" id="dropdownMenuLink"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="img/flags/Russia24.png" alt="">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#"><img src="img/flags/England24.png" alt=""/>English</a>
-            </div>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" id="main-title">
+<!--        TODO 11.03.2020 Check text size-->
+        <a class="navbar-brand col" id="main-title-text" href="#">Калькулятор <br><small class="d-none d-lg-block">Оценки риска возникновения
+            туберкулёза у детей и
+            подростков</small></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
+            <small class="d-block d-lg-none  main-title-text-small">Оценки риска возникновения туберкулёза у детей и подростков</small>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="d-none d-lg-block btn btn-secondary dropdown-toggle language-chooser" href="#"
+                       role="button"
+                       id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/flags/Russia24.png" alt="">
+                    </a>
+                    <a class=" d-block d-lg-none btn btn-secondary dropdown-toggle language-chooser" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/flags/Russia24.png" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="not-active-languages">
+                        <a class="dropdown-item" href="#"><img src="img/flags/England24.png" alt=""/>&nbsp;English</a>
+                    </div>
+                                    </li>
+            </ul>
 
-    </div>
+        </div>
+    </nav>
+
     <div id="main-part">
-        <h4 id="start-text-badge">
+        <h5 id="start-text-badge">
             Выберите, пожалуйста, корректные варианты ответов для получения приблизительного результата
-        </h4>
+        </h5>
         <div class="form-row">
             <div class="form-group col-md-2">
-                <label for="inputAge">Возраст</label>
+                <label for="inputAge" id="age">Возраст</label>
                 <input type="text" class="form-control" id="inputAge" placeholder="Возраст">
             </div>
             <div class="form-group col-md-6">
