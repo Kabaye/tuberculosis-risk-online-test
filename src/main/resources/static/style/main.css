@@ -6,9 +6,9 @@
     background-color: #f3fffd;
 }
 
-#start-text-badge{
+#start-text-badge #start-checkbox-badge{
     width: 100%;
-    /*height: 2rem;*/
+    font-size: 18px;
 }
 
 .language-chooser{
@@ -19,6 +19,10 @@
 
 #main-title-text{
     font-size: 36px;
+}
+
+#main-subtitle-text{
+    font-size: 25px;
 }
 
 .main-title-text-small{

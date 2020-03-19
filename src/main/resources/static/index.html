@@ -11,16 +11,17 @@
 <div class="container">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" id="main-title">
-<!--        TODO 11.03.2020 Check text size-->
-        <a class="navbar-brand col" id="main-title-text" href="#">Калькулятор <br><small class="d-none d-lg-block">Оценки риска возникновения
-            туберкулёза у детей и
-            подростков</small></a>
+        <a class="navbar-brand col" id="main-title-text">Калькулятор <br>
+            <small class="d-none d-lg-block" id="main-subtitle-text">
+                Оценки риска возникновения туберкулёза у детей и подростков</small></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
-            <small class="d-block d-lg-none  main-title-text-small">Оценки риска возникновения туберкулёза у детей и подростков</small>
+            <small class="d-block d-lg-none main-title-text-small">Оценки риска возникновения туберкулёза у детей и
+                подростков</small>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="d-none d-lg-block btn btn-secondary dropdown-toggle language-chooser" href="#"
@@ -29,29 +30,29 @@
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="img/flags/Russia24.png" alt="">
                     </a>
-                    <a class=" d-block d-lg-none btn btn-secondary dropdown-toggle language-chooser" href="#" role="button"
+                    <a class=" d-block d-lg-none btn btn-secondary dropdown-toggle language-chooser" href="#"
+                       role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="img/flags/Russia24.png" alt="">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="not-active-languages">
                         <a class="dropdown-item" href="#"><img src="img/flags/England24.png" alt=""/>&nbsp;English</a>
                     </div>
-                                    </li>
+                </li>
             </ul>
-
         </div>
     </nav>
 
-    <div id="main-part">
+    <div id="main-part" class=" ml-4 mt-3">
         <h5 id="start-text-badge">
-            Выберите, пожалуйста, корректные варианты ответов для получения приблизительного результата
+            Пожалуйста, выберите наилучший ответ для каждого поля:
         </h5>
-        <div class="form-row">
-            <div class="form-group col-md-2">
+        <div class="form-row mt-3">
+            <div class="form-group col-2">
                 <label for="inputAge" id="age">Возраст</label>
                 <input type="text" class="form-control" id="inputAge" placeholder="Возраст">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-5">
                 <label for="inputRegion">Район</label>
                 <select id="inputRegion" class="form-control">
                     <option selected>Выберите район</option>
@@ -60,11 +61,48 @@
                     <option>Гомельский</option>
                 </select>
             </div>
+            <div class="form-group col-5">
+                <label for="inputSizeOfReaction">Размер папулы</label>
+                <select id="inputSizeOfReaction" class="form-control">
+                    <option selected>Выберите размер папулы (мм)</option>
+                    <option>5-9</option>
+                    <option>10-14</option>
+                    <option>15-20</option>
+                    <option>>20</option>
+                </select>
+            </div>
         </div>
-        <div class="form-row">
-
+        <h5 id="start-checkbox-badge">
+            Пожалуйста, выберите все условия, которые в настоящее время применяются к пациенту:<br>
+            <small>(Если ни одно из условий не выполняется, оставьте их пустыми)</small>
+        </h5>
+        <div class="form-check ml-3 mt-3">
+            <div class="row"><input type="checkbox" class="form-check-input" id="isLivingWithPatientUnknownSecretion">
+                <label class="form-check-label" for="isLivingWithPatientUnknownSecretion">Проживание в условиях контакта
+                    с пациентом, больным туберкулезом с неуточненным бактериовыделением</label>
+            </div>
+            <div class="row"><input type="checkbox" class="form-check-input" id="isLivingWithPatientKnownSecretion">
+                <label class="form-check-label" for="isLivingWithPatientKnownSecretion">Проживание в условиях контакта с
+                    пациентом, больным туберкулезом с бактериовыделением</label>
+            </div>
+            <div class="row"><input type="checkbox" class="form-check-input" id="concomitant disease">
+                <label class="form-check-label" for="concomitant disease">Наличие сопутствующих заболеваний,
+                    способствующих возникновению туберкулеза (хронические неспецифические заболевания легких,
+                    язвенная болезнь желудка и 12- перстной кишки, сахарный диабет, психические заболевания, длительный
+                    прием кортикостероидов, цитостатиков и т.п.); различные перенесенные заболевания
+                    (острый бронхит, пневмония, частые острые респираторные вирусные инфекции, перенесенные детские
+                    инфекционные заболевания и т.п.)</label>
+            </div>
+            <div class="row"><input type="checkbox" class="form-check-input" id="sociallyDangerousSituation">
+                <label class="form-check-label" for="sociallyDangerousSituation">Социально опасное положение
+                    несовершеннолетнего; несовершеннолетний нуждается в государственной защите (в соответствии с
+                    постановлениями Министерства образования Республики от 28 июля 2004 г. № 47, от 14.07.2009 N 48 от
+                    25.07.2011 N 117); семья беженцев, мигрантов; низкий уровень материального положения семьи;
+                    неблагополучные жилищно-бытовые условия.</label>
+            </div>
         </div>
     </div>
+
     <div class="row" id="footer">
         <div class="col">Made by BSU /</div>
     </div>
