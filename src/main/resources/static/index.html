@@ -7,26 +7,26 @@
     <link href="style/bootstrap.min.css" rel="stylesheet"/>
     <link href="style/main.css" rel="stylesheet"/>
 </head>
-<body id="main-container">
-<div class="container">
+<body>
+<div class="container" id="main-container">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" id="main-title">
         <a class="navbar-brand col" id="main-title-text">Калькулятор <br>
             <small class="d-none d-lg-block" id="main-subtitle-text">
                 Оценки риска возникновения туберкулёза у детей и подростков</small></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navbar-nav" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbar-nav">
             <small class="d-block d-lg-none" id="main-title-text-small">Оценки риска возникновения туберкулёза у детей и
                 подростков</small>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="d-none d-lg-block btn btn-secondary dropdown-toggle language-chooser" href="#"
                        role="button"
-                       id="dropdownMenuLink"
+                       id="dropdown-menu-link"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="img/flags/Russia24.png" alt="">
                     </a>
@@ -42,91 +42,123 @@
             </ul>
         </div>
     </nav>
-
-    <div id="main-part" class=" ml-4 mt-3">
-        <h5 id="start-text-badge">
-            Пожалуйста, выберите наилучший ответ для каждого поля:
-        </h5>
-        <div class="form-row mt-3">
-            <div class="form-group col-2">
-                <label for="inputAge" id="age">Возраст</label>
-                <input type="text" class="form-control" id="inputAge" placeholder="Возраст">
-            </div>
-            <div class="form-group col-5">
-                <label for="inputRegion">Район</label>
-                <select id="inputRegion" class="form-control">
-                    <option selected>Выберите район</option>
-                    <option>Минский</option>
-                    <option>Ивацевичский</option>
-                    <option>Гомельский</option>
-                </select>
-            </div>
-            <div class="form-group col-5">
-                <label for="inputSizeOfReaction">Размер папулы</label>
-                <select id="inputSizeOfReaction" class="form-control">
-                    <option selected>Выберите размер папулы (мм)</option>
-                    <option>5-9</option>
-                    <option>10-14</option>
-                    <option>15-20</option>
-                    <option>>20</option>
-                </select>
-            </div>
-        </div>
-        <h5 id="start-checkbox-badge">
-            Пожалуйста, выберите все условия, которые в настоящее время применяются к пациенту:<br>
-            <small>(Если условие не выполняется, оставьте его пустыми)</small>
-        </h5>
-        <div class="form-check ml-3 mt-3">
-            <div class="row"><input type="checkbox" class="form-check-input" id="isLivingWithPatientUnknownSecretion">
-                <label class="form-check-label text-justify" for="isLivingWithPatientUnknownSecretion">Проживание в
-                    условиях контакта
-                    с пациентом, больным туберкулезом с неуточненным бактериовыделением</label>
-            </div>
-            <div class="row"><input type="checkbox" class="form-check-input" id="isLivingWithPatientKnownSecretion">
-                <label class="form-check-label text-justify" for="isLivingWithPatientKnownSecretion">Проживание в
-                    условиях контакта с
-                    пациентом, больным туберкулезом с бактериовыделением</label>
-            </div>
-            <div class="row"><input type="checkbox" class="form-check-input" id="concomitant disease">
-                <label class="form-check-label text-justify" for="concomitant disease">Наличие сопутствующих
-                    заболеваний,
-                    способствующих возникновению туберкулеза (хронические неспецифические заболевания легких,
-                    язвенная болезнь желудка и 12- перстной кишки, сахарный диабет, психические заболевания, длительный
-                    прием кортикостероидов, цитостатиков и т.п.); различные перенесенные заболевания
-                    (острый бронхит, пневмония, частые острые респираторные вирусные инфекции, перенесенные детские
-                    инфекционные заболевания и т.п.)</label>
-            </div>
-            <div class="row"><input type="checkbox" class="form-check-input" id="sociallyDangerousSituation">
-                <label class="form-check-label text-justify" for="sociallyDangerousSituation">Социально опасное
-                    положение
-                    несовершеннолетнего; несовершеннолетний нуждается в государственной защите (в соответствии с
-                    постановлениями Министерства образования Республики от 28 июля 2004 г. № 47, от 14.07.2009 N 48 от
-                    25.07.2011 N 117); семья беженцев, мигрантов; низкий уровень материального положения семьи;
-                    неблагополучные жилищно-бытовые условия.</label>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <button type="submit" class="btn btn-primary mx-auto" id="submit-button">Получить результаты</button>
-        </div>
-    </div>
-
-    <div class="row ml-4 mt-3" id="footer">
-        <div class="col">
-            <div class="section" id="contacts">
-                <h5><span>Меня можно найти тут:</span></h5>
-                <div>
-                    <a href="https://vk.com/kabaye" rel="noopener" target="_blank"><img
-                            src="img/footer/contacts/vk-logo.png" alt="vk logo"/></a>
-                    <a href="https://t.me/Kabaye" rel="noopener" target="_blank"> <img
-                            src="img/footer/contacts/tg-logo.png" alt="tg logo"/></a>
-                    <a href="mailto:svkulich@gmail.com" rel="noopener" target="_blank"> <img
-                            src="img/footer/contacts/email-logo.png" alt="e-mail logo"/></a>
+    <div id="main-part">
+        <form class=" ml-4 mt-3" id="form" novalidate>
+            <h5 id="start-text-badge">
+                Пожалуйста, выберите наилучший ответ для каждого поля:
+            </h5>
+            <div class="form-row mt-4">
+                <div class="form-group col-4">
+                    <label for="input-age" id="age">Возраст</label>
+                    <input class="form-control" id="input-age" pattern="[1-9]{1}|1[0-9]{1}" placeholder="Возраст"
+                           required
+                           type="text">
+                    <span aria-live="polite" class="error" id="age-error"></span>
+                </div>
+                <div class="form-group col-4 offset-4">
+                    <label for="input-size-of-reaction">Размер папулы</label>
+                    <select class="form-control" id="input-size-of-reaction" required>
+                        <option selected value="">Выберите размер папулы (мм)</option>
+                        <option value="0">5-9</option>
+                        <option value="1">10-14</option>
+                        <option value="2">15-20</option>
+                        <option value="3">>20</option>
+                    </select>
+                    <span aria-live="polite" class="error" id="reaction-error"></span>
                 </div>
             </div>
+            <h5 id="start-checkbox-badge">
+                Пожалуйста, выберите все условия, которые в настоящее время применяются к пациенту:<br>
+                <small>(Если условие не выполняется, оставьте его пустыми)</small>
+            </h5>
+            <div class="form-check ml-3 mt-3">
+                <div class="row mt-2"><input class="form-check-input" id="affected-by-chernobyl"
+                                             type="checkbox">
+                    <label class="form-check-label text-justify" for="affected-by-chernobyl">Проживание в
+                        наиболее пострадавших от Чернобыльской аварии районах:<br>Брагинский, Буда-Кошелевский,
+                        Ветковский, Добрушский, Ельский, Калинковичский, Кормянский, Лельчицкий, Наровлянский,
+                        Речицкий, Рогачѐвский, Хойникский, Чечерский, Быховский, Костюковичский, Краснопольский,
+                        Славгородский, Чериковский, Лунинецкий, Пинский, Столинский районы</label>
+                </div>
+                <div class="row mt-2"><input class="form-check-input" id="epidemic-factor1" onclick="checkCheckboxes(1)"
+                                             type="checkbox">
+                    <label class="form-check-label text-justify" for="epidemic-factor1">Проживание в
+                        условиях контакта с пациентом, больным туберкулезом с неуточненным бактериовыделением</label>
+                </div>
+                <div class="row mt-2"><input class="form-check-input" id="epidemic-factor2" onclick="checkCheckboxes(2)"
+                                             type="checkbox">
+                    <label class="form-check-label text-justify" for="epidemic-factor2">Проживание в
+                        условиях контакта с пациентом, больным туберкулезом с бактериовыделением</label>
+                </div>
+                <div class="row mt-2"><input class="form-check-input" id="medical-factor" type="checkbox">
+                    <label class="form-check-label text-justify" for="medical-factor">Наличие сопутствующих
+                        заболеваний, способствующих возникновению туберкулеза (хронические неспецифические заболевания
+                        легких, язвенная болезнь желудка и 12- перстной кишки, сахарный диабет, психические заболевания,
+                        длительный прием кортикостероидов, цитостатиков и т.п.); различные перенесенные заболевания
+                        (острый бронхит, пневмония, частые острые респираторные вирусные инфекции, перенесенные детские
+                        инфекционные заболевания и т.п.)</label>
+                </div>
+                <div class="row mt-2"><input class="form-check-input" id="social-factor" type="checkbox">
+                    <label class="form-check-label text-justify" for="social-factor">Социально опасное
+                        положение несовершеннолетнего; несовершеннолетний нуждается в государственной защите (в
+                        соответствии с постановлениями Министерства образования Республики от 28 июля 2004 г.
+                        <a href="http://pravo.by/document/?guid=3961&p0=W20411511" rel="noopener" target="_blank">№
+                            47</a>, от 14.07.2009 <a href="http://pravo.by/document/?guid=3961&p0=W20921270"
+                                                     rel="noopener" target="_blank">№ 48</a>, от 25.07.2011 <a
+                                href="http://pravo.by/document/?guid=3961&p0=W21124020" rel="noopener"
+                                target="_blank">№ 117</a>); семья беженцев, мигрантов; низкий уровень материального
+                        положения семьи; неблагополучные жилищно-бытовые условия.</label>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <button class="btn btn-primary mx-auto col-8" id="submit-button" type="submit">Получить результаты
+                </button>
+                <button class="btn btn-primary mx-auto col-4" id="clear-button" onclick="results.empty()" type="reset">
+                    Очистить форму
+                </button>
+            </div>
+        </form>
+        <div class="row mt-3 ml-4" id="results">
+        </div>
+    </div>
+    <div class="row ml-4 mt-3" id="footer">
+        <div class="col-3" id="contacts">
+            <h5><span>Меня можно найти тут:</span></h5>
+            <div>
+                <a href="https://vk.com/kabaye" rel="noopener" target="_blank"><img
+                        alt="vk logo" src="img/footer/contacts/vk-logo.png"/></a>
+                <a href="https://t.me/Kabaye" rel="noopener" target="_blank"> <img
+                        alt="tg logo" src="img/footer/contacts/tg-logo.png"/></a>
+                <a href="mailto:svkulich@gmail.com" rel="noopener" target="_blank"> <img
+                        alt="e-mail logo" src="img/footer/contacts/email-logo.png"/></a>
+            </div>
+        </div>
+        <div class="col-6" id="help-list">
+            <h5 class="ml-4">Сделано при помощи:</h5>
+            <ol id="help-list-organisation" type="1">
+                <li><a href="http://www.medcenter.by/" rel="noopener" target="_blank">Республиканский
+                    научно-практический центр &laquo;Мать и Дитя&raquo;
+                </a></li>
+                <li><a href="http://uiip.bas-net.by/" rel="noopener"
+                       target="_blank">ОИПИ НАН Беларуси</a></li>
+                <li><a href="https://fpmi.bsu.by/main.aspx?guid=41761" rel="noopener"
+                       target="_blank">ФПМИ БГУ кафедра биомедицинской информатики</a></li>
+            </ol>
+            <h5 class="ml-4">Отдельное спасибо:</h5>
+            <ol id="help-list-people" type="1">
+                <li>Кандидату медицинский наук - Ларисе Александровне Горбач</li>
+                <li>Генеральному директору ОИПИ НАН Беларуси - Тузикову Александру Васильевичу</li>
+            </ol>
+        </div>
+        <div class="col-2" id="source-code">
+            <h5><span>Исходный код:</span></h5>
+            <a href="https://github.com/Kabaye/tuberculosis-risk-online-test" rel="noopener" target="_blank"><img
+                    alt="github logo" src="img/footer/contacts/github-logo.png"/></a>
         </div>
     </div>
 </div>
 <script src="js/jquery-3.4.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
+<script src="js/my.js"></script>
 </body>
 </html>

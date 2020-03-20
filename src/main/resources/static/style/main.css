@@ -1,38 +1,84 @@
 /*Tags*/
 
-body{
+body {
     min-width: 375px;
     min-height: 600px;
+    background-color: #f3fffd;
+}
+
+input:invalid {
+    border-color: #900;
+    background-color: #FDD;
+}
+
+select:invalid {
+    border-color: #900;
+    background-color: #FDD;
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+select:focus:invalid {
+    outline: none;
 }
 
 /*Classes*/
 
-.language-chooser{
+.language-chooser {
     height: 40px;
     width: 68px;
     background-color: #94a7ff;
 }
 
+.error {
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.error.active {
+    padding: 0.3em;
+}
+
 /*IDs*/
 
-#main-title-text-small{
+#main-title-text-small {
     font-size: 18px;
 }
 
-#main-title{
+#main-title {
     background-color: #fcf2ff;
 }
 
 #main-container {
-    background-color: #f3fffd;
 }
 
-#start-text-badge #start-checkbox-badge{
+#form {
+}
+
+#main-part {
+
+}
+
+#results {
+
+}
+
+#start-text-badge #start-checkbox-badge {
     width: 100%;
     font-size: 18px;
 }
 
-#main-title-text{
+#main-title-text {
     font-size: 36px;
 }
 
@@ -40,12 +86,20 @@ body{
     font-size: 25px;
 }
 
-#not-active-languages{
+#not-active-languages {
     max-width: 150px;
     min-width: 150px;
     width: 150px;
 }
 
-#submit-button{
-    width: 190px;
+#submit-button {
+    max-width: 190px;
+}
+
+#clear-button {
+    max-width: 160px;
+}
+
+#help-list {
+    font-size: 15px;
 }
