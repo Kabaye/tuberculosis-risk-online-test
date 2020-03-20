@@ -4,7 +4,7 @@ import lombok.SneakyThrows;
 
 import java.net.URI;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class FileUtils {
@@ -13,7 +13,7 @@ public class FileUtils {
 
     @SneakyThrows
     public static List<String> readLines(URI fileURI) {
-        return Files.readAllLines(Path.of(fileURI));
+        return Files.readAllLines(Paths.get(fileURI));
     }
 
     @SneakyThrows
