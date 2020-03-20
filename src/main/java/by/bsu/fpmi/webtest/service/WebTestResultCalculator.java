@@ -16,12 +16,12 @@ import java.util.Optional;
 
 @Service
 public class WebTestResultCalculator {
-    public static final String AGE_COEFFICIENTS_TXT = "static/data/coefficients/age_coefficients.txt";
-    public static final String REACTION_SIZE_COEFFICIENTS_TXT = "static/data/coefficients/reaction_size_coefficients.txt";
-    public static final String EPIDEMIC_COEFFICIENTS_TXT = "static/data/coefficients/epidemic_coefficients.txt";
-    public static final String MEDICAL_COEFFICIENTS_TXT = "static/data/coefficients/medical_coefficients.txt";
-    public static final String SOCIAL_COEFFICIENTS_TXT = "static/data/coefficients/medical_coefficients.txt";
-    public static final String RANGES_TXT = "static/data/ranges/ranges.txt";
+    public static final String AGE_COEFFICIENTS_TXT = "/data/coefficients/age_coefficients.txt";
+    public static final String REACTION_SIZE_COEFFICIENTS_TXT = "/data/coefficients/reaction_size_coefficients.txt";
+    public static final String EPIDEMIC_COEFFICIENTS_TXT = "/data/coefficients/epidemic_coefficients.txt";
+    public static final String MEDICAL_COEFFICIENTS_TXT = "/data/coefficients/medical_coefficients.txt";
+    public static final String SOCIAL_COEFFICIENTS_TXT = "/data/coefficients/medical_coefficients.txt";
+    public static final String RANGES_TXT = "/data/ranges/ranges.txt";
     public static final String EMPTY = " ";
 
     private final Map<Integer, Double> ageCoefficients;
@@ -34,35 +34,35 @@ public class WebTestResultCalculator {
     @SneakyThrows
     public WebTestResultCalculator() {
         Map<Integer, Double> map = new HashMap<>();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(AGE_COEFFICIENTS_TXT))) {
+        for (String line : FileUtils.readLines(AGE_COEFFICIENTS_TXT)) {
             String[] strings = line.split(EMPTY);
             map.put(Integer.valueOf(strings[0]), Double.valueOf(strings[1]));
         }
         ageCoefficients = Collections.unmodifiableMap(map);
 
         map = new HashMap<>();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(REACTION_SIZE_COEFFICIENTS_TXT))) {
+        for (String line : FileUtils.readLines(REACTION_SIZE_COEFFICIENTS_TXT)) {
             String[] strings = line.split(EMPTY);
             map.put(Integer.valueOf(strings[0]), Double.valueOf(strings[1]));
         }
         reactionCoefficients = Collections.unmodifiableMap(map);
 
         map = new HashMap<>();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(EPIDEMIC_COEFFICIENTS_TXT))) {
+        for (String line : FileUtils.readLines(EPIDEMIC_COEFFICIENTS_TXT)) {
             String[] strings = line.split(EMPTY);
             map.put(Integer.valueOf(strings[0]), Double.valueOf(strings[1]));
         }
         epidemicCoefficients = Collections.unmodifiableMap(map);
 
         map = new HashMap<>();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(MEDICAL_COEFFICIENTS_TXT))) {
+        for (String line : FileUtils.readLines(MEDICAL_COEFFICIENTS_TXT)) {
             String[] strings = line.split(EMPTY);
             map.put(Integer.valueOf(strings[0]), Double.valueOf(strings[1]));
         }
         medicalCoefficients = Collections.unmodifiableMap(map);
 
         map = new HashMap<>();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(SOCIAL_COEFFICIENTS_TXT))) {
+        for (String line : FileUtils.readLines(SOCIAL_COEFFICIENTS_TXT)) {
             String[] strings = line.split(EMPTY);
             map.put(Integer.valueOf(strings[0]), Double.valueOf(strings[1]));
         }
@@ -71,7 +71,7 @@ public class WebTestResultCalculator {
         Map<Risk, Range<Double>> rangeMap = new HashMap<>();
         int i = 0;
         Risk[] risks = Risk.values();
-        for (String line : FileUtils.readLines(FileUtils.getFileURI(RANGES_TXT))) {
+        for (String line : FileUtils.readLines(RANGES_TXT)) {
             String[] strings = line.split(EMPTY);
             rangeMap.put(risks[i++], Range.closed(Double.valueOf(strings[0]), Double.valueOf(strings[1])));
         }
