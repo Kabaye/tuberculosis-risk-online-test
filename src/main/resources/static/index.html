@@ -22,16 +22,21 @@
         <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbar-nav">
             <small class="d-block d-lg-none" id="main-title-text-small">Оценки риска возникновения туберкулёза у детей и
                 подростков</small>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" id="language-chooser-ul">
                 <li class="nav-item dropdown">
-                    <a class="btn btn-secondary dropdown-toggle language-chooser" href="#"
-                       role="button"
-                       id="dropdown-menu-link"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="img/flags/Russia24.png" alt="">
+                    <a aria-expanded="false" aria-haspopup="true"
+                       class="btn btn-secondary dropdown-toggle language-chooser"
+                       data-toggle="dropdown"
+                       href="#" id="main-lang" role="button">
+                        <img alt="" src="img/flags/Russia24.png">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="not-active-languages">
-                        <a class="dropdown-item" href="#"><img src="img/flags/England24.png" alt=""/>&nbsp;English</a>
+                    <div aria-labelledby="dropdownMenuLink" class="dropdown-menu" id="not-active-languages">
+                        <a class="dropdown-item" href="#" data-dropdown-val="ru"><img class="localization" alt=""
+                                                                                   id="ru-img"
+                                                                                   src="img/flags/Russia24.png"/>&nbsp;Russian</a>
+                        <a class="dropdown-item" href="#" data-dropdown-val="en"><img class="localization" alt=""
+                                                                                   id="en-img"
+                                                                                   src="img/flags/England24.png"/>&nbsp;English</a>
                     </div>
                 </li>
             </ul>

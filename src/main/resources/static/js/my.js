@@ -12,6 +12,7 @@ const checkCheckboxes = function (elem) {
     }
 };
 
+//TODO 27.03.2020 add runtime validation!
 age.addEventListener("input", function () {
     if (age.validity.valid) {
         error[0].innerHTML = "";
@@ -123,3 +124,17 @@ function onFail() {
     results.empty();
     results.prepend('<h5 class="text-danger font-weight-bold ml-4">Что-то пошло не так! Сервер не доступен!</h5>');
 }
+
+function changeLocalization() {
+
+}
+
+$(document).ready(function () {
+    $("#not-active-languages a").on("click", function () {
+        let id = $(this).data('dropdown-val');
+        let src = $('#'+id+'-img')[0].src;
+        src = src.substring(src.indexOf('img'));
+        $("#main-lang").html('<img alt="" src="'+src+'">');
+        changeLocalization();
+    });
+});
