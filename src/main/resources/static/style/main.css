@@ -26,6 +26,9 @@ select:focus:invalid {
 
 /*Classes*/
 
+.localization{
+}
+
 .language-chooser {
     height: 40px;
     width: 68px;
