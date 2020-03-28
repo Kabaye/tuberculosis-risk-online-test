@@ -5,9 +5,6 @@ const error = document.querySelectorAll('.error');
 const results = $('#results');
 
 let currentLocalizationJson;
-$.getJSON('language/' + userLang + '-localization.json', function (result) {
-    currentLocalizationJson = result
-});
 
 const checkCheckboxes = function (elem) {
     if (elem === 1) {
@@ -113,7 +110,7 @@ function onFail() {
     results.prepend('<h5 class="text-danger font-weight-bold ml-4">' + currentLocalizationJson['error-msg'] + '</h5>');
 }
 
-$(document).ready(function () {
+function checkLocalization() {
     $('.localization').each(function () {
         let el = $(this);
         let key = (el.attr('id'));
@@ -128,4 +125,19 @@ $(document).ready(function () {
     let src = $('#' + userLang + '-img')[0].src;
     src = src.substring(src.indexOf('img'));
     $("#main-lang").html('<img alt="" src="' + src + '">');
+}
+
+let defDoc = $.Deferred();
+let defJson = $.Deferred();
+$(document).ready(() => {
+    defDoc.resolve();
 });
+
+$.getJSON('language/' + userLang + '-localization.json', function (result) {
+    currentLocalizationJson = result;
+    defJson.resolve();
+});
+$.when(defDoc, defJson).done(() => {
+checkLocalization();
+})
+;

@@ -6,6 +6,8 @@
     <title>Web application for assessing the risk of developing tuberculosis in children and adolescents</title>
     <link href="style/bootstrap.min.css" rel="stylesheet"/>
     <link href="style/main.css" rel="stylesheet"/>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <script>
         const browserLang = navigator.language.substring(0, 2);
         const userLang = location.pathname === '/' ? browserLang : location.pathname.substring(1);
@@ -19,7 +21,7 @@
 <div class="container" id="main-container">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light w-100" id="main-title">
-        <a class="navbar-brand col localization" id="main-title-text"><br>
+        <a class="navbar-brand col localization" id="main-title-text">
             <small class="d-none d-lg-block localization" id="main-subtitle-text"></small></a>
         <button aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
                 data-target="#navbar-nav" data-toggle="collapse" type="button">
@@ -138,8 +140,6 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-3.4.1.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
 <script src="js/my.js"></script>
 </body>
 </html>
